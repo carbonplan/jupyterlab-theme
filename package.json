@@ -1,0 +1,50 @@
+{
+  "name": "@carbonplan/dark-theme-extension",
+  "version": "0.0.1",
+  "description": "JupyterLab - Default Dark Theme",
+  "homepage": "https://github.com/carbonplan/carbonplan-jupyterlab-theme",
+  "bugs": {
+    "url": "https://github.com/carbonplan/carbonplan-jupyterlab-theme/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carbonplan/carbonplan-jupyterlab-theme.git"
+  },
+  "license": "MIT",
+  "author": "Joe Hamman",
+  "files": [
+    "lib/*.d.ts",
+    "lib/*.js.map",
+    "lib/*.js",
+    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+  ],
+  "sideEffects": true,
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "style": "style/index.css",
+  "directories": {
+    "lib": "lib/"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rimraf lib",
+    "prepublishOnly": "npm run build",
+    "watch": "tsc -b --watch"
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^2.1.0",
+    "@jupyterlab/apputils": "^2.1.0"
+  },
+  "devDependencies": {
+    "rimraf": "~3.0.0",
+    "typedoc": "^0.15.4",
+    "typescript": "~3.7.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "jupyterlab": {
+    "extension": true,
+    "themePath": "style/index.css"
+  }
+}
